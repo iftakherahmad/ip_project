@@ -5,28 +5,31 @@ class SearchPanel extends Component {
         super(props);
         this.state = { 
             resindentStates:["RESIDENTIAL","NON RESIDENTIAL","BOTH"],
-            departments:["ALL DEPARTMENT","CSE","EEE","PHYSICS","CHEMISTRY","MATH","RME","NE","MICROBIOLOGY","GENETICS","PHARMACY"],
+            departments:["ALL DEPT","CSE","EEE","PHY","CHEM","MATH","RME","NE","MB","GENETICS","PHARMACY"],
             sessions:["ALL SESSION","2010-11","2011-12","2012-13","2013-14","2014-15","2015-16","2016-17","2017-18","2018-19","2019-20","2020-21","2021-22"],
             bloodGroups:["ALL BLOOD GROUP","O+","O-","A+","A-","B+","B-","AB+","AB-"],
-            resindentState:"RESIDENTIAL",
-            department:"ALL DEPARTMENT",
+            resindentState:"BOTH",
+            department:"ALL DEPT",
             session:"ALL SESSION",
             bloodGroup:"ALL BLOOD GROUP"
 
          }
     }
     formQuery=()=>{
-        return {
-            session:this.state.session,
-            department:this.state.department,
-            bloodGroup:this.state.bloodGroup,
-            resindentState:this.state.resindentState
-        }
+        let obj={};
+        let isR="";
+        if(this.state.resindentState==="NON RESIDENTIAL")isR="No";
+        if(this.state.resindentState==="RESIDENTIAL")isR="Yes";
+        if(this.state.session!=="ALL SESSION"){obj["session"]=this.state.session;}
+        if(this.state.department!=="ALL DEPT"){obj["department"]=this.state.department;}
+        if(this.state.bloodGroup!=="ALL BLOOD GROUP"){obj["bloodGroup"]=this.state.bloodGroup;}
+        if(this.state.resindentState!=="BOTH"){obj["isResident"]=isR;}
+        return obj;
     }
     onClickReset=(e)=>{
         let newState={
-            resindentState:"RESIDENTIAL",
-            department:"ALL DEPARTMENT",
+            resindentState:"BOTH",
+            department:"ALL DEPT",    
             session:"ALL SESSION",
             bloodGroup:"ALL BLOOD GROUP"
         }
@@ -53,6 +56,9 @@ class SearchPanel extends Component {
         this.setState({bloodGroup:e.target.value})
         this.props.onChangeFilter(this.formQuery());
     }
+    onClickAddStudent=(e)=>{
+        this.props.AAS(true);
+    }
     render() { 
         return ( 
             <div className="panel3">
@@ -78,6 +84,8 @@ class SearchPanel extends Component {
                         })}
                     </select>
                     <button onClick={this.onClickReset} className="btn-primary btn reset-btn3">Reset Filters</button>
+                    {(this.props.ASV && !this.props.AASV)?<button onClick={this.onClickAddStudent} className='btn-primary btn reset-btn3'>Add Student</button>:""}
+                    
                 </div>
             </div>
          );

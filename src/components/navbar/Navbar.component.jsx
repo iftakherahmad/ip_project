@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Link} from 'react-router-dom';
 import logo from '../../images/du-logo.png';
 import './navbar.css'
 import 'font-awesome/css/font-awesome.min.css'
+import { USERNAME_KEY } from '../../global.js';
 
 import {
     Nav,
@@ -80,7 +81,7 @@ class Navbar extends Component {
                 
               </NavMenu>
               <NavBtn>
-               { (!this.state.loggedIn)?<NavBtnLink to='/signin'>Sign In</NavBtnLink>:"short profile"}
+               { (!this.props.statusL.is_Logged_IN)?<NavBtnLink to='/account/signin'>Sign In</NavBtnLink>:localStorage.getItem(USERNAME_KEY)}
               </NavBtn>
             </Nav>
         </>

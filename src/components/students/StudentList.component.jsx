@@ -16,23 +16,10 @@ class StudentList extends Component {
         return ( 
         <div className="wrapper_7">
             <div className="container1_7">
-                <StudentV1 student={this.props.students[0]}/>
-                <StudentV1 student={this.props.students[0]}/>
-                <StudentV1 student={this.props.students[0]}/>
-                <StudentV1 student={this.props.students[0]}/>
-                <StudentV1 student={this.props.students[0]}/>
-                <StudentV1 student={this.props.students[0]}/>
-                <StudentV1 student={this.props.students[0]}/>
-                <StudentV1 student={this.props.students[0]}/>
+                {this.props.students.map(student=>(<StudentV1 student={student}/>))}
             </div>
             <div className="container2_7">
-                <StudentV2 student={this.props.students[0]}/>
-                <StudentV2 student={this.props.students[0]}/>
-                <StudentV2 student={this.props.students[0]}/>
-                <StudentV2 student={this.props.students[0]}/>
-                <StudentV2 student={this.props.students[0]}/>
-                <StudentV2 student={this.props.students[0]}/>
-
+                {this.props.students.map(student=>(<StudentV2 student={student}/>))}
             </div>
             
         </div> );

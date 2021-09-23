@@ -1,4 +1,6 @@
+import axios from 'axios';
 import React, { Component } from 'react';
+import { BACKEND_URL } from '../../global';
 import unknown from '../../images/unkk.png'
 import './addStudent.css'
 
@@ -6,28 +8,38 @@ class AddStudent extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            departments:["CSE","EEE","PHY","MATH","CHEM"], //TODO: load list of department
-            sessions:["2011-12","2012-13","2013-14","2014-15","2015-16","2016-17"],//TODO: calculate sessions
+            departments:["ALL DEPT","CSE","EEE","PHY","CHEM","MATH","RME","NE","MB","GENETICS","PHARMACY"], //TODO: load list of department
+            sessions:["2011-12","2012-13","2013-14","2014-15","2015-16","2016-17","2017-18","2019-20","2020-21","2021-22"],//TODO: calculate sessions
             isResident:false,
             bloodGroups:['A+','A-','B+','B-','AB+','AB-','O+','O-'],
             bucket:{
-                name:"",
-                registrationNumber:"",
-                department:'',
-                session:'',
-                profilePicUrl:'',
-                bloodGroup:'',
-                phoneNo:'',
-                email:'',
+                name:null,
+                registrationNumber:null,
+                department:null,
+                session:null,
+                profilePicUrl:null,
+                bloodGroup:null,
+                phoneNo:null,
+                email:null,
                 isResident:'No',
-                roomNo:'',
-                bodingCardNo:'',
-                residentialUpto:''
+                roomNo:null,
+                bodingCardNo:null,
+                residentialUpto:null
             }
         }
     }
     onSubmit=(e)=>{
         e.preventDefault()
+        axios.post(BACKEND_URL+"data/add_student",this.state.bucket)
+                .then((res)=>{
+                    console.log("Student added succesfully");
+                    console.log(this.props)
+                    this.props.onChangeFilter({});
+                    this.props.AAS(false);
+                })
+                .catch(err=>{
+                    console.log("Student add failed")
+                })
         console.log(this.state.bucket)
     }
     onChangeName=(e)=>{
@@ -74,7 +86,7 @@ class AddStudent extends Component {
     render() { 
         return ( 
             <div className="wrapper_15">
-                <div className='cross_15'><i onClick={this.props.onClose} className="fa fa-times cst_15" aria-hidden="true"></i></div>
+                <div className='cross_15'><i onClick={this.props.onClosePOP} className="fa fa-times cst_15" aria-hidden="true"></i></div>
                 <div className='profile_pic_15'>
                     <img src={unknown} className='profile_pic_15'/>
                 </div>
@@ -155,6 +167,7 @@ class AddStudent extends Component {
                         </div>
                         <input type='submit' value='Add' className='submit_15'/>
                     </div>
+                    
                     
 
 

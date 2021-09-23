@@ -1,22 +1,27 @@
 import React, { Component } from 'react';
 import './signup.css';
-import {Link} from 'react-router-dom'
+import {Link,Redirect} from 'react-router-dom'
+import axios from 'axios';
+import {USERNAME_KEY,PASSWORD_KEY} from '../../global.js'
+let BACKEND_URL="http://localhost:3002/";
+
+
 class Signup extends Component {
     constructor(props) {
         super(props);
         this.state = { 
+            redirectAddress:null,
             credentials:{
-                registration_number:"",
-                password:"",
-                name:"",
-                picture:"",
+                registrationNumber:null,
+                password:null,
+                name:null,
+                picture:null,
                 isResident:"No",
-                bodingCardNo:"",
-                phone:"",
-                email:"",
+                bodingCardNumber:null,
+                phone:null,
+                email:null
             },
-            confirmPassword:""
-
+            confirmPassword:null
         }
     }
     onChangePhone=(e)=>{
@@ -30,7 +35,7 @@ class Signup extends Component {
         this.state.credentials.email=e.target.value;
     }
     onChangeRegistrationNo=(e)=>{
-        this.state.credentials.registration_number=e.target.value;
+        this.state.credentials.registrationNumber=e.target.value;
     }
     onChangePassword=(e)=>{
         this.state.credentials.password=e.target.value;
@@ -45,14 +50,29 @@ class Signup extends Component {
     }
     onSubmit=(e)=>{
         e.preventDefault();
+        if(this.state.confirmPassword!==this.state.credentials.password){}
+        else{
+            axios.post(BACKEND_URL+"account/signup/",this.state.credentials)
+            .then((rep)=>{
+                console.log(rep);
+                localStorage.setItem(USERNAME_KEY,rep.data.username);
+                localStorage.setItem(PASSWORD_KEY,rep.data.password);
+                this.props.RL(true);
+                this.setState({redirectAddress:'/home'})
+
+            }).catch((error)=>{
+                console.log(error);
+            })          
+        }
         console.log(this.state);
     }
     onChangeBodingNo=(e)=>{
-        this.state.credentials.bodingCardNo=e.target.value;
+        this.state.credentials.bodingCardNumber=e.target.value;
     }
     render() { 
         return ( 
             <div>
+                {(this.state.redirectAddress!==null)?<Redirect to={this.state.redirectAddress}/>:""}
                 <div className="back-ground">
                 <marquee behavior='alternate' className='mark11'>Welcome to Amar Ekushey Hall, University of Dhaka</marquee>
                 </div>

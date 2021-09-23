@@ -17,7 +17,7 @@ function StudentV2(props) {
     return (
         <div className="wrapper_10">
             <div className="imgC_10">
-                <img className="img_10" src={(props.student.pictureUrl==="")?unknown:props.student.pictureUrl}/>
+                <img className="img_10" src={(props.student.profilePicUrl===null)?unknown:props.student.profilePicUrl}/>
             </div>
             <div className='seperator_10'></div>
             <div className="cont_10">
