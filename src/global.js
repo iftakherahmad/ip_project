@@ -1,4 +1,4 @@
-module.exports.BACKEND_URL="https://iaj-node-server23.herokuapp.com/";
+module.exports.BACKEND_URL="https://iaj-ip-proj.herokuapp.com/";
 
 module.exports.USERNAME_KEY="UnivDhaKa:AeH";
 
