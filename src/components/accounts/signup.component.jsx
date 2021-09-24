@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './signup.css';
 import {Link,Redirect} from 'react-router-dom'
 import axios from 'axios';
-import {USERNAME_KEY,PASSWORD_KEY} from '../../global.js'
+import {USERNAME_KEY,PASSWORD_KEY, GITHUB_REPO} from '../../global.js'
 let BACKEND_URL="http://localhost:3002/";
 
 
@@ -58,7 +58,7 @@ class Signup extends Component {
                 localStorage.setItem(USERNAME_KEY,rep.data.username);
                 localStorage.setItem(PASSWORD_KEY,rep.data.password);
                 this.props.RL(true);
-                this.setState({redirectAddress:'/home'})
+                this.setState({redirectAddress:GITHUB_REPO+'/home'})
 
             }).catch((error)=>{
                 console.log(error);

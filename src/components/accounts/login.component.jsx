@@ -3,7 +3,7 @@ import './login.css';
 import {Link,Redirect} from 'react-router-dom'
 import unknown from '../../images/unknown.svg'
 import axios from 'axios';
-import { ADMIN_KEY, BACKEND_URL, PASSWORD_KEY, USERNAME_KEY } from '../../global.js';
+import { ADMIN_KEY, BACKEND_URL, GITHUB_REPO, PASSWORD_KEY, USERNAME_KEY } from '../../global.js';
 
 
 class Login extends Component {
@@ -37,7 +37,7 @@ class Login extends Component {
                         this.props.AS(true);
                     }
                     this.props.RL(true);
-                    this.setState({redirectAddr:"/home"})
+                    this.setState({redirectAddr:GITHUB_REPO+"/home"})
                 }
                 else{
                     console.log(res.data.message)
@@ -69,7 +69,7 @@ class Login extends Component {
                             <br/>
                             <input type='submit' value="Login" className='submitL'/>
                             <br/>
-                            <div className="reggL">Don't have any account?<br></br> Register <Link to='/account/signup'>here.</Link></div>
+                            <div className="reggL">Don't have any account?<br></br> Register <Link to={GITHUB_REPO+'/account/signup'}>here.</Link></div>
                         </form>
                     </div>
 

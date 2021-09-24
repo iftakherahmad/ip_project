@@ -7,6 +7,7 @@ import StudentList from './students/StudentList.component';
 import StudentFragment from './students/StudentsFragment.component';
 import './home.css'
 import { findAllByDisplayValue } from '@testing-library/dom';
+import { GITHUB_REPO } from '../global.js';
 class HomePage extends Component {
     constructor(props) {
         super(props);
@@ -28,9 +29,9 @@ class HomePage extends Component {
                 <Router>
                     <div className='home5'><Navbar RL={this.refreshLogin} statusL={this.state}/></div>
                     <div className='fragment5'>
-                        <Route path="/account/signin" render={()=>(<Login AS={this.refreshAdminStatus} RL={this.refreshLogin}/>)}/>
-                        <Route path="/account/signup" render={()=>(<Signup RL={this.refreshLogin}/>)}/>
-                        <Route path='/students' render={()=>(<StudentFragment ASV={this.state.is_admin_logged_in} AS={this.refreshAdminStatus} RL={this.refreshLogin}/>)}/>
+                        <Route path={GITHUB_REPO+"/account/signin"} render={()=>(<Login AS={this.refreshAdminStatus} RL={this.refreshLogin}/>)}/>
+                        <Route path={GITHUB_REPO+"/account/signup"} render={()=>(<Signup RL={this.refreshLogin}/>)}/>
+                        <Route path={GITHUB_REPO+'/students'} render={()=>(<StudentFragment ASV={this.state.is_admin_logged_in} AS={this.refreshAdminStatus} RL={this.refreshLogin}/>)}/>
                     </div>
                 </Router>
             </div>
