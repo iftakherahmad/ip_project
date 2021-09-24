@@ -1,29 +1,34 @@
 {
   "files": {
     "main.css": "/ip_project/static/css/main.4af9184e.chunk.css",
-    "main.js": "/ip_project/static/js/main.b90c912e.chunk.js",
-    "main.js.map": "/ip_project/static/js/main.b90c912e.chunk.js.map",
-    "runtime-main.js": "/ip_project/static/js/runtime-main.1731ce5e.js",
-    "runtime-main.js.map": "/ip_project/static/js/runtime-main.1731ce5e.js.map",
+    "main.js": "/ip_project/static/js/main.f35567a8.chunk.js",
+    "main.js.map": "/ip_project/static/js/main.f35567a8.chunk.js.map",
+    "runtime-main.js": "/ip_project/static/js/runtime-main.f0821163.js",
+    "runtime-main.js.map": "/ip_project/static/js/runtime-main.f0821163.js.map",
     "static/css/2.8ec847f4.chunk.css": "/ip_project/static/css/2.8ec847f4.chunk.css",
-    "static/js/2.f152770f.chunk.js": "/ip_project/static/js/2.f152770f.chunk.js",
-    "static/js/2.f152770f.chunk.js.map": "/ip_project/static/js/2.f152770f.chunk.js.map",
-    "static/js/3.46a9f4af.chunk.js": "/ip_project/static/js/3.46a9f4af.chunk.js",
-    "static/js/3.46a9f4af.chunk.js.map": "/ip_project/static/js/3.46a9f4af.chunk.js.map",
+    "static/js/2.4d26c648.chunk.js": "/ip_project/static/js/2.4d26c648.chunk.js",
+    "static/js/2.4d26c648.chunk.js.map": "/ip_project/static/js/2.4d26c648.chunk.js.map",
+    "static/js/3.2b87fc7b.chunk.js": "/ip_project/static/js/3.2b87fc7b.chunk.js",
+    "static/js/3.2b87fc7b.chunk.js.map": "/ip_project/static/js/3.2b87fc7b.chunk.js.map",
     "index.html": "/ip_project/index.html",
     "static/css/2.8ec847f4.chunk.css.map": "/ip_project/static/css/2.8ec847f4.chunk.css.map",
     "static/css/main.4af9184e.chunk.css.map": "/ip_project/static/css/main.4af9184e.chunk.css.map",
-    "static/js/2.f152770f.chunk.js.LICENSE.txt": "/ip_project/static/js/2.f152770f.chunk.js.LICENSE.txt",
+    "static/js/2.4d26c648.chunk.js.LICENSE.txt": "/ip_project/static/js/2.4d26c648.chunk.js.LICENSE.txt",
     "static/media/signup.css": "/ip_project/static/media/Amar1.000374d5.jpg",
     "static/media/du-logo.3c4caf4b.png": "/ip_project/static/media/du-logo.3c4caf4b.png",
     "static/media/font-awesome.min.css": "/ip_project/static/media/fontawesome-webfont.f691f37e.woff",
+    "static/media/hall_front.000374d5.jpg": "/ip_project/static/media/hall_front.000374d5.jpg",
+    "static/media/hall_gate.f1f45676.jpg": "/ip_project/static/media/hall_gate.f1f45676.jpg",
+    "static/media/hall_ornamented.756ca86a.jpg": "/ip_project/static/media/hall_ornamented.756ca86a.jpg",
+    "static/media/price_sport2.a144c1d4.jpg": "/ip_project/static/media/price_sport2.a144c1d4.jpg",
+    "static/media/sport_price.41318126.jpg": "/ip_project/static/media/sport_price.41318126.jpg",
     "static/media/unknown.2cadc090.svg": "/ip_project/static/media/unknown.2cadc090.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.1731ce5e.js",
+    "static/js/runtime-main.f0821163.js",
     "static/css/2.8ec847f4.chunk.css",
-    "static/js/2.f152770f.chunk.js",
+    "static/js/2.4d26c648.chunk.js",
     "static/css/main.4af9184e.chunk.css",
-    "static/js/main.b90c912e.chunk.js"
+    "static/js/main.f35567a8.chunk.js"
   ]
 }

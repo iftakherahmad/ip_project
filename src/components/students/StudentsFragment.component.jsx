@@ -9,7 +9,7 @@ class StudentFragment extends Component {
     constructor(props) {
         super(props);
         this.state = { //TODO: load student info
-            students:[{registrationNumber:"2016-914-412",name:"Md. Iftakher Ahmad",department:"CSE",session:"2016-17",isResident:"Yes",pictureUrl:"",bloodGroup:"B+"}],
+            students:[],
             addAStudent:false,
             addSBtn:true,
             query:{}

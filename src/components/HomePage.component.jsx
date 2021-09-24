@@ -8,6 +8,7 @@ import StudentFragment from './students/StudentsFragment.component';
 import './home.css'
 import { findAllByDisplayValue } from '@testing-library/dom';
 import { GITHUB_REPO } from '../global.js';
+import ImageSlider from './HomeFragment/imageSlider';
 class HomePage extends Component {
     constructor(props) {
         super(props);
@@ -32,6 +33,7 @@ class HomePage extends Component {
                         <Route path={GITHUB_REPO+"/account/signin"} render={()=>(<Login AS={this.refreshAdminStatus} RL={this.refreshLogin}/>)}/>
                         <Route path={GITHUB_REPO+"/account/signup"} render={()=>(<Signup RL={this.refreshLogin}/>)}/>
                         <Route path={GITHUB_REPO+'/students'} render={()=>(<StudentFragment ASV={this.state.is_admin_logged_in} AS={this.refreshAdminStatus} RL={this.refreshLogin}/>)}/>
+                        <Route path={GITHUB_REPO+"/home"} component={ImageSlider}/>
                     </div>
                 </Router>
             </div>
