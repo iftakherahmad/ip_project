@@ -34,7 +34,7 @@ class HomePage extends Component {
                         <Route path={GITHUB_REPO+"/account/signup"} render={()=>(<Signup RL={this.refreshLogin}/>)}/>
                         <Route path={GITHUB_REPO+'/students'} render={()=>(<StudentFragment ASV={this.state.is_admin_logged_in} AS={this.refreshAdminStatus} RL={this.refreshLogin}/>)}/>
                         <Route path={GITHUB_REPO+"/home"} component={ImageSlider}/>
-                        <Route path={GITHUB_REPO+"/"} component={ImageSlider}/>
+                        <Route exact path={GITHUB_REPO+"/"} component={ImageSlider}/>
                     </div>
                 </Router>
             </div>
